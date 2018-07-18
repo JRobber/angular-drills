@@ -1,9 +1,25 @@
-<html>
-	<body>
-	
+<!DOCTYPE HTML>
+<html ng-app="app">
+	<body ng-controller="controller">
+	{{test}}
+
+
+<input ng-model="words" ></input>
+<p>{{words}}</p>
+
+<p>search "filter"</p>
+<input ng-model="crewFilter"></input>
+
+
+<div ng-repeat="member in crew | filter: crewFilter">
+	{{member.name}} - {{member.rank}}
+</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
-		<script src="controller.js"></script>
 		<script src="service.js"></script>
+		<script src="controller.js"></script>
+
+
 	</body>
 </html>
